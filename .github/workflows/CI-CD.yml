@@ -51,7 +51,7 @@ jobs:
     - name: Checkout infra-repo and update tag
       run: |
         git clone https://x-access-token:${{ secrets.INFRA_REPO_TOKEN }}@github.com/wrQQng/Helm-iac.git
-        cd appgit
+        cd Helm-iac
         yq e '.backend.tag = "${{ github.sha }}"' -i helm-chart/values.yaml
         yq e '.frontend.tag = "${{ github.sha }}"' -i helm-chart/values.yaml
         git config user.email "CD@IlliaKhira.com"
