@@ -56,7 +56,7 @@ jobs:
         yq e '.frontend.tag = "${{ github.sha }}"' -i helm-chart/values.yaml
         git config user.email "CD@IlliaKhira.com"
         git config user.name "CD Bot"
-        git add my-chart/values.yaml
+        git add helm-chart/values.yaml
         git commit -m "chore: update backend and frontend image tags to ${{ github.sha }}"
         git remote set-url origin https://x-access-token:${{ secrets.INFRA_REPO_TOKEN }}@github.com/wrQQng/Helm-iac.git
         git push
