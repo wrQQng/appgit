@@ -2,7 +2,7 @@ name: Build and Publish image to ECR and update Infra Repo
 on:
   push:
     branches:
-    - main
+    - master
 
 # Only trigger the workflow if changes were made in the backend or frontend directories
 
