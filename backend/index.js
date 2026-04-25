@@ -13,6 +13,7 @@ for (const key of required) {
   }
 }
 
+// trigger for actions
 
 const pool = new Pool({
   host: process.env.DB_HOST,
