@@ -50,7 +50,7 @@ jobs:
 
     - name: Checkout infra-repo and update tag
       run: |
-        git clone https://x-access-token:${{ secrets.INFRA_REPO_TOKEN }}@github.com/wrQQng/argocdtry.git
+        git clone https://x-access-token:${{ secrets.INFRA_REPO_TOKEN }}@github.com/wrQQng/Helm-iac.git
         cd argocdtry
         yq e '.backend.tag = "${{ github.sha }}"' -i my-chart/values.yaml
         yq e '.frontend.tag = "${{ github.sha }}"' -i my-chart/values.yaml
@@ -58,5 +58,5 @@ jobs:
         git config user.name "CD Bot"
         git add my-chart/values.yaml
         git commit -m "chore: update backend and frontend image tags to ${{ github.sha }}"
-        git remote set-url origin https://x-access-token:${{ secrets.INFRA_REPO_TOKEN }}@github.com/wrQQng/argocdtry.git
+        git remote set-url origin https://x-access-token:${{ secrets.INFRA_REPO_TOKEN }}@github.com/wrQQng/Helm-iac.git
         git push
